@@ -2,6 +2,8 @@
 
 Places `n` chess queens on an `n x n` chessboard without conflicts.
 
+Generalization of the classic Eight Queens Puzzle ([wiki](http://en.wikipedia.org/wiki/Eight_queens_puzzle))
+
 ### Approach
 
 This puzzle can be seen as enforcing two conditions over a set of `n` coordinates on a `n`-by-`n` chessboard:
