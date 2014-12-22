@@ -1,28 +1,7 @@
 #!/usr/bin/env ruby
 
-# N-Queens puzzle solver - version 4.1
-
-# This work is licensed under the Creative Commons Attribution-NonCommercial-
-# ShareAlike 3.0 Unported License. To view a copy of this license, visit
-# http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
-# Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
-# Copyright 2014 Giuseppe Cuccu - all rights reserved
-
-# This puzzle can be seen as enforcing two conditions over 2D coordinates:
-# a. There should be no orthogonal crossing (no two coords sharing row/column)
-# b. There should be no diagonal crossing (no two coords on same diagonal
-
-# I satisfy the first by building candidate solutions from permutations of rows
-# and columns, to grant their uniqueness. Moreover I sort the candidates by the
-# rows, in order to reduce the permutation space (duplicate solutions changing
-# the order of the queens in the solution listing). I then verify the second
-# condition by rotating the reference system by PI/4 radians, and then check no
-# repetitions in the two new list of coordinates.
-
-# This method is extremely efficient in both CPU and RAM usage. My laptop finds
-# all solutions (including mirrored) for 9 queens in less than 6 seconds, with a
-# ram occupation of few KB since each solution is evaluated (and eventually
-# discarded) upon construction.
+# N-Queens puzzle solver - version 4.2
+# USAGE: ruby n_queens.rb <NQUEENS>
 
 def check_along_dimension candidate
   candidate.transpose.map do |lst| 
